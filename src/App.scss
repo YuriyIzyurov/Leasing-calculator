@@ -1,0 +1,194 @@
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.calculator {
+  //background-color: #ffffff;
+  //box-shadow: 0 0 15px 6px rgba(0, 0, 0, 0.2);
+  padding: 213px 48px 213px 44px;
+}
+.title {
+  width: 753px;
+  color: #111111;
+}
+.info {
+  display: flex;
+  &__summary {
+    width: 459px;
+    &-description {
+      line-height: 150%;
+      margin-bottom: 8px;
+    }
+    &-price{
+      display: flex;
+      color: #333333;
+      span:nth-child(2) {
+        line-height: 38px;
+      }
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    width: 426px;
+    height: 68px;
+    margin-top: 10px;
+    background: #FF9514;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 12px;
+    gap: 10px;
+    .font-button {
+      color: #FFFFFF;
+      line-height: 36px;
+      font-size: 30px;
+    }
+    &-preloader {
+      pointer-events: none;
+      align-self: flex-end;
+      width: 43px;
+      animation: animation 0.9s ease infinite;
+      @keyframes animation {
+        0% {
+          transform: rotate(0turn);
+        }
+        100% {
+          transform: rotate(1turn);
+        }
+      }
+    }
+    &-active {
+      transition: 0.1s;
+    }
+    &-active:hover {
+      background: #111111;
+    }
+    &-active:active{
+      background: #575757;
+    }
+  }
+}
+.footer {
+  display: flex;
+}
+.gilroy-font {
+  font-family: Gilroy-Regular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+.bold-font {
+  font-family: Nekst-Black;
+  line-height: 90%;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 54px;
+}
+.bold-font-small {
+  font-family: Nekst-Black;
+  line-height: 36px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  color: #575757;
+}
+.bold-font-tiny {
+  font-family: Nekst-Black;
+  line-height: 120%;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  color: #575757;
+}
+@media screen and (max-width: 1440px) {
+  .info__button {
+    width: 320px;
+  }
+  .info__summary {
+    width: 352px;
+  }
+  .calculator {
+    padding: 213px 48px 213px 48px;
+  }
+}
+@media only screen and (max-width: 1120px) {
+  .title {
+    margin-bottom: 12px;
+    width: 704px;
+  }
+  .calculator {
+    padding: 64px 29px 80px 36px;
+  }
+  .info {
+    margin: 37px 0 44px 0;
+  }
+  .info__button {
+    width: 345px;
+  }
+  .footer {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .title {
+    margin-bottom: 7px;
+    width: 280px;
+  }
+  .calculator {
+    padding: 44px 20px 64px 20px;
+  }
+  .bold-font {
+    font-size: 34px;
+  }
+  .info {
+    flex-direction: column;
+    margin: 25px 0 3px 0;
+  }
+  .info__button {
+    width: 280px;
+    height: 60px;
+    margin-top: 0;
+  }
+  .info__button-preloader {
+    width: 36px;
+  }
+  .info__summary {
+    width: 280px;
+    margin-bottom: 29px;
+  }
+  .info__summary-description {
+    margin-bottom: 2px;
+  }
+  .info__summary-price span:nth-child(2) {
+    line-height: 24px;
+  }
+  .gilroy-font {
+    font-size: 14px;
+  }
+  .bold-font-small,
+  .bold-font-mobile{
+    font-size: 22px;
+    line-height: 20px;
+  }
+  .font-button{
+    font-size: 22px !important;
+    line-height: 20px !important;
+  }
+  .info__summary-price span:nth-child(2) {
+    line-height: 17px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .container {
+    height: 100vh;
+    width: 100vw;
+  }
+  .calculator {
+    width: calc(235px + (330 - 250) * ((100vw - 250px) / (380 - 250)));
+  }
+}
